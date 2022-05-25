@@ -40,3 +40,124 @@
     color: black;
     box-shadow: 0 0 10px white;
 }
+
+.title {
+    text-align: center;
+}
+
+.upcoming {
+    text-align: center;
+}
+
+/* formatting images and table cells */
+
+.bwe {
+    width: 500px;
+}
+
+.bwet {
+    float: right;
+    margin-right: 500px;
+    margin-top: 150px;
+  }
+
+.bwg {
+    width: 500px;
+}
+
+.bwgt {
+    float: right;
+    margin-right: 500px;
+    margin-top: 150px;
+  }
+
+.lrp {
+    width: 500px;
+}
+
+.lrpt {
+    float: right;
+    margin-right: 500px;
+    margin-top: 150px;
+  }
+
+.bbk {
+    width: 500px;
+}
+
+.bbkt {
+    float: right;
+    margin-right: 500px;
+    margin-top: 150px;
+  }
+
+.nhb {
+    width: 500px;
+}
+
+.nhbt {
+    float: right;
+    margin-right: 500px;
+    margin-top: 150px;
+  }
+
+.bbs {
+    width: 500px;
+}
+
+.bbst {
+    float: right;
+    margin-right: 500px;
+    margin-top: 150px;
+  }
+
+.cms {
+    width: 500px;
+}
+
+.cmst {
+    float: right;
+    margin-right: 500px;
+    margin-top: 150px;
+  }
+
+.ams {
+    width: 500px;
+}
+
+.amst {
+    float: right;
+    margin-right: 500px;
+    margin-top: 150px;
+  }
+
+.aqs {
+    width: 500px;
+}
+
+.aqst {
+    float: right;
+    margin-right: 500px;
+    margin-top: 150px;
+  }
+
+.sas {
+    width: 500px;
+}
+
+.sast {
+    float: right;
+    margin-right: 500px;
+    margin-top: 150px;
+  }
+
+.hlg {
+    width: 500px;
+}
+
+.hlgt {
+    float: right;
+    margin-right: 500px;
+    margin-top: 150px;
+  }
+
