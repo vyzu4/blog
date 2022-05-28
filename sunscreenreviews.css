@@ -49,7 +49,14 @@
     text-align: center;
 }
 
+
+
 /* formatting images and table cells */
+
+/*--------------------------------------------------------*/ 
+.buarwe {
+    padding: 10px;
+}
 
 .bwe {
     width: 500px;
@@ -60,6 +67,10 @@
     margin-right: 500px;
     margin-top: 150px;
   }
+/*--------------------------------------------------------*/
+.buarwg {
+    padding: 10px;
+}
 
 .bwg {
     width: 500px;
@@ -70,6 +81,10 @@
     margin-right: 500px;
     margin-top: 150px;
   }
+/*--------------------------------------------------------*/
+.alssffab {
+    padding: 10px;
+}
 
 .lrp {
     width: 500px;
@@ -80,6 +95,10 @@
     margin-right: 500px;
     margin-top: 150px;
   }
+/*--------------------------------------------------------*/
+.bbktfsls {
+    padding: 10px;
+}
 
 .bbk {
     width: 500px;
@@ -90,6 +109,10 @@
     margin-right: 500px;
     margin-top: 150px;
   }
+/*--------------------------------------------------------*/
+.nhbwglss {
+    padding: 10px;
+}
 
 .nhb {
     width: 500px;
@@ -100,6 +123,10 @@
     margin-right: 500px;
     margin-top: 150px;
   }
+/*--------------------------------------------------------*/
+.bbspbmsls {
+    padding: 10px;
+}
 
 .bbs {
     width: 500px;
@@ -110,9 +137,44 @@
     margin-right: 500px;
     margin-top: 150px;
   }
+/*--------------------------------------------------------*/
+.nbssszmsl {
+    padding: 10px;
+}
+
+.nbs {
+    width: 500px;
+    
+}
+
+.nbst {
+    float: right;
+    margin-right: 500px;
+    margin-top: 150px;
+  }
+/*--------------------------------------------------------*/
+.nsspwgs {
+    padding: 10px;
+}
+
+.nss {
+    width: 500px;
+    
+}
+
+.nsst {
+    float: right;
+    margin-right: 500px;
+    margin-top: 150px;
+  }
+/*--------------------------------------------------------*/
+.cmslpass {
+    padding: 10px;
+}
 
 .cms {
     width: 500px;
+    
 }
 
 .cmst {
@@ -120,6 +182,10 @@
     margin-right: 500px;
     margin-top: 150px;
   }
+/*--------------------------------------------------------*/
+.amssfsss {
+    padding: 10px;
+}
 
 .ams {
     width: 500px;
@@ -130,6 +196,10 @@
     margin-right: 500px;
     margin-top: 150px;
   }
+/*--------------------------------------------------------*/
+.aqspbs {
+    padding: 10px;
+}
 
 .aqs {
     width: 500px;
@@ -140,7 +210,7 @@
     margin-right: 500px;
     margin-top: 150px;
   }
-
+/*--------------------------------------------------------*/
 .sas {
     width: 500px;
 }
