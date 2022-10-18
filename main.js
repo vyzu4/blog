@@ -10,7 +10,12 @@ let frame = 0; //keep track of frame count
 let score = 0; //score count (passing obstacles)
 let game_speed = 2; 
 
-let temp = canvas.height - 90;
+const gradient = ctx.createLinearGradient(0, 0, 0, 70);
+gradient.addColorStop('0.4', '#fff');
+gradient.addColorStop('0.5', '#000');
+gradient.addColorStop('0.55', '#4040ff');
+gradient.addColorStop('0.6', '#000');
+gradient.addColorStop('0.9', '#fff');
 
 function animate(){
     ctx.clearRect(0, 0, canvas.width, canvas.height); //clears canvas
@@ -19,8 +24,14 @@ function animate(){
     handle_particles();
     bird.update();
     bird.draw();
-    handle_collisions();
 
+    //score counter
+    ctx.fillStyle = 'red';
+    ctx.font = '90px Georgia';
+    ctx.strokeText(score, 450, 70);
+    ctx.fillText(score, 450, 70);
+
+    handle_collisions();
     //if collision is detected, stop game!
     if (handle_collisions()){
         return;
@@ -47,7 +58,7 @@ window.addEventListener('keyup', function(e){
 });
 
 const bang = new Image();
-bang.src = 'images/bang.png';
+bang.src = 'bang.png';
 
 function handle_collisions(){
     for(let i = 0; i < obstacles_array.length; i++){
@@ -56,6 +67,10 @@ function handle_collisions(){
             bird.x + bird.width > obstacles_array[i].x &&
             ((bird.y < 0 + obstacles_array[i].top && bird.y + bird.height > 0) || (bird.y > canvas.height - obstacles_array[i].bottom && bird.y + bird.height < canvas.height))){
                 ctx.drawImage(bang, bird.x, bird.y, 50, 50);
+                //game over message
+                ctx.font = "25px Georgia";
+                ctx.fillStyle = 'black';
+                ctx.fillText('Game Over, Your score is ' + score, 160, canvas.height/2 - 10);
                 return true;
             }
     }
