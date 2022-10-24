@@ -211,16 +211,40 @@
     margin-top: 150px;
   }
 /*--------------------------------------------------------*/
+.sasmscg {
+    padding: 10px;
+}
 .sas {
     width: 500px;
 }
-
+.sast {
+    float: right;
+    margin-right: 500px;
+    margin-top: 150px;
+  }
+/*--------------------------------------------------------*/
+.hlguwg {
+    padding: 10px;
+}
 .hlg {
     width: 500px;
 }
-
-.boj {
+.hlgt {
+    float: right;
+    margin-right: 500px;
+    margin-top: 150px;
+  }
+/*--------------------------------------------------------*/
+.bogrs {
+    padding: 10px;
+}
+.bog {
     width: 500px;
 }
-
+.bogt {
+    float: right;
+    margin-right: 500px;
+    margin-top: 150px;
+  }
+/*--------------------------------------------------------*/
 
