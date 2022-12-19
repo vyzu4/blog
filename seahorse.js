@@ -307,7 +307,7 @@ window.addEventListener('load', function(){
     //child of class Enemy
     //has access to class Enemy's properties and methods
     //"inheritance"
-    class angler1 extends Enemy{
+    class Angler1 extends Enemy{
         constructor(game){
             super(game); //ensures that super class Enemy's constructor is executed, otherwise this constructor will override it
             this.width = 228;
@@ -322,7 +322,7 @@ window.addEventListener('load', function(){
 
     }
 
-    class angler2 extends Enemy{
+    class Angler2 extends Enemy{
         constructor(game){
             super(game); //ensures that super class Enemy's constructor is executed, otherwise this constructor will override it
             this.width = 213;
@@ -336,7 +336,7 @@ window.addEventListener('load', function(){
 
     }
 
-    class lucky extends Enemy{
+    class Lucky extends Enemy{
         constructor(game){
             super(game); //ensures that super class Enemy's constructor is executed, otherwise this constructor will override it
             this.width = 99;
@@ -351,7 +351,7 @@ window.addEventListener('load', function(){
 
     }
 
-    class hivewhale extends Enemy{
+    class Hivewhale extends Enemy{
         constructor(game){
             super(game); //ensures that super class Enemy's constructor is executed, otherwise this constructor will override it
             this.width = 400;
@@ -367,7 +367,7 @@ window.addEventListener('load', function(){
 
     }
 
-    class drone extends Enemy{
+    class Drone extends Enemy{
         constructor(game, x, y){
             super(game); //ensures that super class Enemy's constructor is executed, otherwise this constructor will override it
             this.width = 115;
@@ -666,7 +666,7 @@ window.addEventListener('load', function(){
 
                             if(enemy.type === 'hive'){
                                 for(let i = 0; i < 5; i++){
-                                    this.enemies.push(new drone(this, enemy.x + Math.random() * enemy.width, enemy.y + Math.random() * enemy.height));
+                                    this.enemies.push(new Drone(this, enemy.x + Math.random() * enemy.width, enemy.y + Math.random() * enemy.height));
                                 }
                             }
 
@@ -715,16 +715,16 @@ window.addEventListener('load', function(){
             const randomize = Math.random();
 
             if(randomize < 0.3){
-                this.enemies.push(new angler1(this));
+                this.enemies.push(new Angler1(this));
             }
             else if (randomize < 0.6){
-                this.enemies.push(new angler2(this));
+                this.enemies.push(new Angler2(this));
             }
             else if (randomize < 0.7){
-                this.enemies.push(new hivewhale(this));
+                this.enemies.push(new Hivewhale(this));
             }
             else{
-                this.enemies.push(new lucky(this));
+                this.enemies.push(new Lucky(this));
             }
         }
 
