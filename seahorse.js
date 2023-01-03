@@ -96,7 +96,7 @@ window.addEventListener('load', function(){
             this.markedForDeletion = false;
             this.angle = 0;
             this.va = Math.random() * 0.2 - 0.1;
-            this.bounced = false;
+            this.bounced = 0;
             this.bottomBounceBoundary = Math.random() * 80 + 60;
         }
 
@@ -307,7 +307,7 @@ window.addEventListener('load', function(){
     //child of class Enemy
     //has access to class Enemy's properties and methods
     //"inheritance"
-    class Angler1 extends Enemy{
+    class angler1 extends Enemy{
         constructor(game){
             super(game); //ensures that super class Enemy's constructor is executed, otherwise this constructor will override it
             this.width = 228;
@@ -322,7 +322,7 @@ window.addEventListener('load', function(){
 
     }
 
-    class Angler2 extends Enemy{
+    class angler2 extends Enemy{
         constructor(game){
             super(game); //ensures that super class Enemy's constructor is executed, otherwise this constructor will override it
             this.width = 213;
@@ -336,7 +336,7 @@ window.addEventListener('load', function(){
 
     }
 
-    class Lucky extends Enemy{
+    class lucky extends Enemy{
         constructor(game){
             super(game); //ensures that super class Enemy's constructor is executed, otherwise this constructor will override it
             this.width = 99;
@@ -351,7 +351,7 @@ window.addEventListener('load', function(){
 
     }
 
-    class Hivewhale extends Enemy{
+    class hivewhale extends Enemy{
         constructor(game){
             super(game); //ensures that super class Enemy's constructor is executed, otherwise this constructor will override it
             this.width = 400;
@@ -367,7 +367,7 @@ window.addEventListener('load', function(){
 
     }
 
-    class Drone extends Enemy{
+    class drone extends Enemy{
         constructor(game, x, y){
             super(game); //ensures that super class Enemy's constructor is executed, otherwise this constructor will override it
             this.width = 115;
@@ -587,7 +587,7 @@ window.addEventListener('load', function(){
             this.ammoInterval = 350; //interval to replenish ammo
             this.gameOver = false;
             this.score = 0;
-            this.winningScore = 50;
+            this.winningScore = 100;
             this.gameTime = 0;
             this.timeLimit = 30000;
             this.speed = 1;
@@ -666,7 +666,7 @@ window.addEventListener('load', function(){
 
                             if(enemy.type === 'hive'){
                                 for(let i = 0; i < 5; i++){
-                                    this.enemies.push(new Drone(this, enemy.x + Math.random() * enemy.width, enemy.y + Math.random() * enemy.height));
+                                    this.enemies.push(new drone(this, enemy.x + Math.random() * enemy.width, enemy.y + Math.random() * enemy.height));
                                 }
                             }
 
@@ -715,16 +715,16 @@ window.addEventListener('load', function(){
             const randomize = Math.random();
 
             if(randomize < 0.3){
-                this.enemies.push(new Angler1(this));
+                this.enemies.push(new angler1(this));
             }
             else if (randomize < 0.6){
-                this.enemies.push(new Angler2(this));
+                this.enemies.push(new angler2(this));
             }
             else if (randomize < 0.7){
-                this.enemies.push(new Hivewhale(this));
+                this.enemies.push(new hivewhale(this));
             }
             else{
-                this.enemies.push(new Lucky(this));
+                this.enemies.push(new lucky(this));
             }
         }
 
