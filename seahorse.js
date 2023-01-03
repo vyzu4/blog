@@ -1,3 +1,149 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* navigational bar */
+
+.navbar {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 1.2rem; /*1rem = 16 something */
+    position: sticky;
+    top: 0;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    margin: 20px 0px;
+}
+
+.navbar ul li {
+    font-family: Arial, sans-serif;
+    font-size: 1.1;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 8px 25px;
+    transition: all .5s ease;
+}
+
+.navbar ul li a:hover {
+    background-color: white;
+    color: black;
+    box-shadow: 0 0 10px white;
+}
+
+.stuff {
+    text-align: left;
+    padding: 10px;
+    border: transparent;
+    margin: 1rem auto;
+    width: fit-content;
+}
+
+#canvas1 {
+    border: 5px solid black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #4d79bc;
+    /* ensures we always see the canvas */
+    max-width: 100%;
+    max-height: 100%;
+
+    font-family: 'Bangers', cursive;
+}
+
+/* characters */
+/* dont display */
+#player, #angler1, #angler2, #lucky, #hivewhale, #drone {
+    display: none;
+}
+
+/* props */
+/* dont display */
+#projectile, #gears, #smokeExplosion, #fireExplosion {
+    display: none;
+}
+
+/* layers */
+/* dont display */
+#layer1, #layer2, #layer3, #layer4 {
+    display: none;
+}
+ 58  
+seahorse.html
+@@ -0,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- link to font: https://fonts.google.com/specimen/Bangers -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+
+    <!-- css files -->
+    <link rel="stylesheet" href="seahorse.css">
+</head>
+<body>
+
+    <!-- navbar -->
+    <nav class="navbar">
+        <ul>
+            <li>
+                <!-- index.html is home -->
+                <a href="index.html">Home</a> 
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="sunscreenreviews.html">Sunscreen Reviews</a>
+                <a href="seahorse.html">Seahorse Game</a>
+            </li>
+        </ul>
+    </nav>
+
+    <canvas id="canvas1"></canvas>
+
+    <!-- characters -->
+    <img id="player" src="images/player.png">
+    <img id="angler1" src="images/angler1.png">
+    <img id="angler2" src="images/angler2.png">
+    <img id="lucky" src="images/lucky.png">
+    <img id="hivewhale" src="images/hivewhale.png">
+    <img id="drone" src="images/drone.png">
+
+    <!-- props -->
+    <img id="projectile" src="images/projectile.png">
+    <img id="gears" src="images/gears.png">
+    <img id="smokeExplosion" src="images/smokeExplosion.png">
+    <img id="fireExplosion" src="images/fireExplosion.png">
+
+    <!-- environment --> 
+    <img id="layer1" src="images/layer1.png">
+    <img id="layer2" src="images/layer2.png">
+    <img id="layer3" src="images/layer3.png">
+    <img id="layer4" src="images/layer4.png">
+
+    <!-- js files -->
+    <script src="seahorse.js"></script>
+</body>
+</html>
+ 780  
+seahorse.js
+@@ -0,0 +1,780 @@
 window.addEventListener('load', function(){
     //canvas setup
     const canvas = document.getElementById('canvas1');
@@ -28,7 +174,7 @@ window.addEventListener('load', function(){
                 else if(e.key === 'd'){
                     this.game.debug = !this.game.debug;
                 }
-                            
+
             });
 
             //listens for released key
@@ -42,7 +188,7 @@ window.addEventListener('load', function(){
                     //removes 1 element at index this.game.keys.indexOf(e.key) 
                     this.game.keys.splice(this.game.keys.indexOf(e.key), 1);
                 }
-                
+
             });
 
         }
@@ -61,7 +207,7 @@ window.addEventListener('load', function(){
             this.markedForDeletion = false;
             this.image = document.getElementById('projectile');
         }
-        
+
         update(){
             this.x += this.speed;
 
@@ -96,7 +242,7 @@ window.addEventListener('load', function(){
             this.markedForDeletion = false;
             this.angle = 0;
             this.va = Math.random() * 0.2 - 0.1;
-            this.bounced = 0;
+            this.bounced = false;
             this.bottomBounceBoundary = Math.random() * 80 + 60;
         }
 
@@ -128,7 +274,7 @@ window.addEventListener('load', function(){
 
     //main character
     class Player{
-       
+
         //special method of class
         //when called, it will create a new object and assign it properties 
         constructor(game){
@@ -148,7 +294,7 @@ window.addEventListener('load', function(){
             this.powerUpTimer = 0;
             this.powerUpLimit = 10000;
         }
-        
+
         //update method
         update(deltaTime){
             //includes() method determines if an array includes a certain value among its entries
@@ -182,7 +328,7 @@ window.addEventListener('load', function(){
             //filter() method creates new array with all elements that pass the test implemented by provided function
             //every time markedForDeletion == true on a projectile, it will get removed from projectiles[]
             this.projectiles = this.projectiles.filter(projectile => !projectile.markedForDeletion);
-            
+
             //sprite animation
             if(this.frameX < this.maxFrame){
                 this.frameX++;
@@ -218,9 +364,9 @@ window.addEventListener('load', function(){
             this.projectiles.forEach(projectile => {
                 projectile.draw(context); 
             });
-    
+
             context.drawImage(this.image, this.frameX * this.width, this.frameY * this.height, this.width, this.height, this.x, this.y, this.width, this.height);
-            
+
         }
 
         shootTop(){
@@ -271,10 +417,10 @@ window.addEventListener('load', function(){
             this.maxFrame = 37;
 
         }
-                                
+
         update(){
             this.x += this.speedX - this.game.speed;
- 
+
             //check if enemy has moved across the game
             if (this.x + this.width < 0){
                 this.markedForDeletion = true; 
@@ -295,7 +441,7 @@ window.addEventListener('load', function(){
                 context.strokeRect(this.x, this.y, this.width, this.height); 
             }       
             context.drawImage(this.image, this.frameX * this.width, this.frameY * this.height, this.width, this.height, this.x, this.y, this.width, this.height);
-            
+
             if(this.game.debug){
                 context.font = '20px Helvetica';
             context.fillText(this.lives, this.x, this.y);
@@ -317,7 +463,7 @@ window.addEventListener('load', function(){
             this.frameY = Math.floor(Math.random() * 3); //between 0 & 1, refer to spreadsheet
             this.lives = 5;
             this.score = this.lives;
-            
+
         }
 
     }
@@ -503,7 +649,7 @@ window.addEventListener('load', function(){
             this.fontFamily = 'Bangers';
             this.color = 'white';
         }
-            
+
             draw(context){
                 //save this state of canvas at only this point
                 //have it between context.save() & context.restore() methods
@@ -530,7 +676,7 @@ window.addEventListener('load', function(){
                     context.textAlign = 'center';
                     let message1;
                     let message2;
-                    
+
                     if(this.game.score > this.game.winningScore){
                         message1 = 'You Win!';
                         message2 = 'Well Done!';
@@ -560,7 +706,7 @@ window.addEventListener('load', function(){
             }
 
     }
- 
+
 
     //main brain
     class Game{
@@ -587,7 +733,7 @@ window.addEventListener('load', function(){
             this.ammoInterval = 350; //interval to replenish ammo
             this.gameOver = false;
             this.score = 0;
-            this.winningScore = 100;
+            this.winningScore = 50;
             this.gameTime = 0;
             this.timeLimit = 30000;
             this.speed = 1;
@@ -606,7 +752,7 @@ window.addEventListener('load', function(){
 
             this.background.update();
             this.background.layer4.update();
-            
+
             this.player.update(deltaTime);
 
             if (this.ammoTimer > this.ammoInterval){
@@ -638,7 +784,7 @@ window.addEventListener('load', function(){
                     for(let i = 0; i < enemy.score; i++){
                         this.particles.push(new Particle(this, enemy.x + enemy.width * 0.5, enemy.y + enemy.height * 0.5));
                     }
-                    
+
                     if(enemy.type === 'lucky'){
                         this.player.enterPowerUp();
                     }
