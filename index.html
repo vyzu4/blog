@@ -1,38 +1,56 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <!-- attach css file -->
-    <link rel="stylesheet" href="index.css" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- stylesheet for arrow -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
+    <link rel="stylesheet" href="about.css" />
+    <title>Blog</title>
+  </head>
+  <body>
+    <div class="menu-bar">
+      <h1 class="logo">Vicky Zhu</h1>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="#">Projects <i class="fas fa-caret-down"></i></a>
 
-    <!-- navbar -->
-    <nav class="navbar">
-        <ul>
-            <li>
-                <!-- index.html is home -->
-                <a href="index.html">Home</a> 
-                <a href="about.html">About</a>
-                <a href="projects.html">Projects</a>
-                <a href="sunscreenreviews.html">Sunscreen Reviews</a>
-                <a href="seahorse.html">Seahorse Game</a>
-            </li>
-        </ul>
-    </nav>
+            <div class="dropdown-down">
+                <ul>
+                    <li><a href="ubc-projects.html">UBC Projects</a></li>
+                    <li><a href="sailbot.html">Sailbot</a></li>
+                    <li><a href="#">Games <i class="fas fa-caret-right"></i></a>
+                    
+                        <div class="dropdown-right">
+                            <ul>
+                                <li><a href="seahorse.html">Seahorse Shooter</a></li>
+                                <li><a href="flappybird.html">Flappy Bird</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
 
-    <div class="stuff">
-        <p>
-            My name is Vicky Zhu and this is my website. <br>
-            Major development is currently undergoing. <br> 
-            For now, you can find skincare reviews. <br>
-            Click <a href="https://www.google.com/search?q=corgis&rlz=1C1CHBF_enCA883CA883&sxsrf=ALiCzsY6jvfmAhfqk94rXpJU3cp8SBBtzA:1653473361757&source=lnms&tbm=isch&sa=X&ved=2ahUKEwia0_2itPr3AhVWoY4IHV9RApkQ_AUoAXoECAIQAw&biw=1706&bih=792&dpr=2.25">here</a>
-            to browse corgi pictures while you wait.
-        </p>    
+        </li>
+        <li><a href="#">Skincare <i class="fas fa-caret-down"></i></a>
+          <div class="dropdown-down">
+            <ul>
+                <li><a href="sunscreens.html">Sunscreens</a></li>
+            </ul>
+        </div>
+        </li>
+      </ul>
     </div>
 
-</body>
+    <div class="paragraph">
+      <p>
+        My name is Vicky Zhu and this is my website. <br>
+        I post my projects and skincare reviews. <br>
+        Click <a href="https://www.google.com/search?q=corgis&rlz=1C1CHBF_enCA883CA883&sxsrf=ALiCzsY6jvfmAhfqk94rXpJU3cp8SBBtzA:1653473361757&source=lnms&tbm=isch&sa=X&ved=2ahUKEwia0_2itPr3AhVWoY4IHV9RApkQ_AUoAXoECAIQAw&biw=1706&bih=792&dpr=2.25">here</a>
+        to browse corgi pictures. Enjoy!
+      </p>    
+  </div>
+
+  </body>
 </html>
