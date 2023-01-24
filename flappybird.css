@@ -80,16 +80,19 @@ body {
     left: 0;
     top: 100%;
     background-color: var(--color-black);
+    z-index: 1; /* priority of being in front */
   }
   
 .menu-bar ul li:hover .dropdown-down ul {
     display: block;
     margin: 10px;
+    z-index: 2; /* priority of being in front */
   }
   
 .menu-bar ul li:hover .dropdown-down ul li {
     width: 150px;
     padding: 10px;
+    z-index: 3; /* priority of being in front */
   }
   
 .dropdown-right {
@@ -116,7 +119,7 @@ body {
   
 #canvas1 { /* game screen */
   position: absolute; 
-  top: 55%;
+  top: 65%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 500px;
