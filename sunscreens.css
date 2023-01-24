@@ -1,0 +1,318 @@
+/* colours */
+:root {
+    --color-primary: #0073ff;
+    --color-white: #e9e9e9;
+    --color-black: #141d28;
+    --color-black-1: #212b38;
+  }
+  
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+body {
+    font-family: sans-serif;
+   
+  }
+  
+.logo {
+    color: var(--color-white);
+    font-size: 30px;
+  }
+  
+.logo span {
+    color: var(--color-primary);
+  }
+  
+.menu-bar {
+    background-color: var(--color-black);
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+  
+    position: relative;
+  }
+  
+  .menu-bar ul {
+    list-style: none;
+    display: flex;
+  }
+  
+.menu-bar ul li {
+    /* width: 120px; */
+    padding: 10px 30px;
+    /* text-align: center; */
+  
+    position: relative;
+  }
+  
+.menu-bar ul li a {
+    font-size: 20px;
+    color: var(--color-white);
+    text-decoration: none;
+  
+    transition: all 0.3s;
+  }
+  
+.menu-bar ul li a:hover {
+    color: var(--color-primary);
+  }
+  
+.fas {
+    float: right;
+    margin-left: 10px;
+    padding-top: 3px;
+  }
+  
+/* dropdown menu style */
+.dropdown-down {
+    display: none;
+  }
+  
+.menu-bar ul li:hover .dropdown-down {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: var(--color-black);
+  }
+  
+.menu-bar ul li:hover .dropdown-down ul {
+    display: block;
+    margin: 10px;
+  }
+  
+.menu-bar ul li:hover .dropdown-down ul li {
+    width: 150px;
+    padding: 10px;
+  }
+  
+.dropdown-right {
+    display: none;
+  }
+  
+.dropdown-down ul li:hover .dropdown-right {
+    display: block;
+    position: absolute;
+    left: 150px;
+    top: 0;
+    background-color: var(--color-black);
+  }
+
+.paragraph {
+    text-align: left;
+    padding: 10px;
+    border: transparent;
+    margin: 1rem auto;
+    width: fit-content;
+}
+
+.title {
+  text-align: center;
+}
+
+.upcoming {
+  text-align: center;
+}
+
+/* formatting images and table cells */
+
+/*--------------------------------------------------------*/ 
+.buarwe {
+  padding: 10px;
+}
+
+.bwe {
+  width: 500px;
+}
+
+.bwet {
+  float: right;
+  margin-right: 500px;
+  margin-top: 150px;
+}
+/*--------------------------------------------------------*/
+.buarwg {
+  padding: 10px;
+}
+
+.bwg {
+  width: 500px;
+}
+
+.bwgt {
+  float: right;
+  margin-right: 500px;
+  margin-top: 150px;
+}
+/*--------------------------------------------------------*/
+.alssffab {
+  padding: 10px;
+}
+
+.lrp {
+  width: 500px;
+}
+
+.lrpt {
+  float: right;
+  margin-right: 500px;
+  margin-top: 150px;
+}
+/*--------------------------------------------------------*/
+.bbktfsls {
+  padding: 10px;
+}
+
+.bbk {
+  width: 500px;
+}
+
+.bbkt {
+  float: right;
+  margin-right: 500px;
+  margin-top: 150px;
+}
+/*--------------------------------------------------------*/
+.nhbwglss {
+  padding: 10px;
+}
+
+.nhb {
+  width: 500px;
+}
+
+.nhbt {
+  float: right;
+  margin-right: 500px;
+  margin-top: 150px;
+}
+/*--------------------------------------------------------*/
+.bbspbmsls {
+  padding: 10px;
+}
+
+.bbs {
+  width: 500px;
+}
+
+.bbst {
+  float: right;
+  margin-right: 500px;
+  margin-top: 150px;
+}
+/*--------------------------------------------------------*/
+.nbssszmsl {
+  padding: 10px;
+}
+
+.nbs {
+  width: 500px;
+  
+}
+
+.nbst {
+  float: right;
+  margin-right: 500px;
+  margin-top: 150px;
+}
+/*--------------------------------------------------------*/
+.nsspwgs {
+  padding: 10px;
+}
+
+.nss {
+  width: 500px;
+  
+}
+
+.nsst {
+  float: right;
+  margin-right: 500px;
+  margin-top: 150px;
+}
+/*--------------------------------------------------------*/
+.cmslpass {
+  padding: 10px;
+}
+
+.cms {
+  width: 500px;
+  
+}
+
+.cmst {
+  float: right;
+  margin-right: 500px;
+  margin-top: 150px;
+}
+/*--------------------------------------------------------*/
+.amssfsss {
+  padding: 10px;
+}
+
+.ams {
+  width: 500px;
+}
+
+.amst {
+  float: right;
+  margin-right: 500px;
+  margin-top: 150px;
+}
+/*--------------------------------------------------------*/
+.aqspbs {
+  padding: 10px;
+}
+
+.aqs {
+  width: 500px;
+}
+
+.aqst {
+  float: right;
+  margin-right: 500px;
+  margin-top: 150px;
+}
+/*--------------------------------------------------------*/
+.sasmscg {
+  padding: 10px;
+}
+.sas {
+  width: 500px;
+}
+.sast {
+  float: right;
+  margin-right: 500px;
+  margin-top: 150px;
+}
+/*--------------------------------------------------------*/
+.hlguwg {
+  padding: 10px;
+}
+.hlg {
+  width: 500px;
+}
+.hlgt {
+  float: right;
+  margin-right: 500px;
+  margin-top: 150px;
+}
+/*--------------------------------------------------------*/
+.bogrs {
+  padding: 10px;
+}
+.bog {
+  width: 500px;
+}
+.bogt {
+  float: right;
+  margin-right: 500px;
+  margin-top: 150px;
+}
+/*--------------------------------------------------------*/
