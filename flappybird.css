@@ -119,12 +119,15 @@ body {
   
 #canvas1 { /* game screen */
   position: absolute; 
-  top: 65%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
+  /* dimensions */
   width: 500px;
   height: 730px;
   border: 2px solid black;
+  max-width: 90%;
+  max-height: 90%;
 }
 
 #background, #bottom, #flappyBird, #topPipe, #bottomPipe {
